@@ -1,5 +1,8 @@
 package hacs;
 
+import java.util.*;
+import java.text.DateFormat;
+
 /**
  * Title:        HACS
  * Description:  CSE870 Homework 3:  Implementing Design Patterns
@@ -8,9 +11,6 @@ package hacs;
  * @author Ji Zhang, Wei Zhu
  * @version 1.0
  */
-
-import java.util.*;
-import java.text.DateFormat;
 
 public class Assignment {
 

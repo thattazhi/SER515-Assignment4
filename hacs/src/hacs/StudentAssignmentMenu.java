@@ -98,7 +98,7 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 	 */
 	public void ShowMenu(Assignment assignment, Person thePerson) {
 		theAssignment = assignment;
-		SolutionIterator theIter = theAssignment.GetSolutionIterator();
+		SolutionIterator theIter = theAssignment.getSolutionIterator();
 		theSolution = (Solution) theIter.next(thePerson.UserName);
 		if (theSolution == null) {
 			tbSolution.setText("");
@@ -118,7 +118,7 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		if (boolSubmit == true) {
 			if (theSolution == null) {
 				theSolution = new Solution();
-				theAssignment.AddSolution(theSolution);
+				theAssignment.addSolution(theSolution);
 			}
 			theSolution.theAuthor = thePerson.UserName;
 			theSolution.SolutionFileName = tbSolution.getText();
