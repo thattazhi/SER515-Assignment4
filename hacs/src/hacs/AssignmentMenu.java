@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-
 /**
  * Title:        HACS
  * Description:
@@ -17,10 +16,14 @@ import java.io.*;
 
 abstract public class AssignmentMenu extends JDialog
 {
-  abstract void ShowMenu(Assignment ass,Person per);
-  public AssignmentMenu()
-  {
-    setModal(true);
-    setSize(575,330);
-  }
+    public static final int LENGTH = 575;
+    public static final int BREADTH = 330;
+    
+    abstract void ShowMenu(Assignment assignment, Person person);
+    
+    public AssignmentMenu()
+    {
+      setModal(true);
+      setSize(LENGTH, BREADTH);
+    }
 }
