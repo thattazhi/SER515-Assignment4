@@ -77,16 +77,16 @@ abstract public class CourseMenu extends JDialog
   function of facade, after that refresh window
   */
 
-  /* when the add button is pressed, call ViewAssignment
+  /* when the view button is pressed, call ViewAssignment
   function of facade, after that refresh window
   */
 
-  abstract void ShowMenu(Course theCourse);
-  abstract void ShowAddButtons();
-  abstract void ShowViewButtons();
-  abstract void ShowRadios();
-  abstract void ShowComboxes();
-  abstract void ShowLabel();
+  abstract void showMenu(Course theCourse);
+  abstract void showAddButtons();
+  abstract void showViewButtons();
+  abstract void showRadios();
+  abstract void showComboxes();
+  abstract void showLabel();
 
   void AssignmentAddButton_actionPerformed(ActionEvent e)
   {
@@ -110,14 +110,14 @@ abstract public class CourseMenu extends JDialog
 
   void buttonChangeCourse_actionPerformed(ActionEvent e)
   {
-    bLogout=false;
-    hide();
+      bLogout=false;
+      setVisible(false);
   }
 
   void buttonLogout_actionPerformed(ActionEvent e)
   {
-    bLogout=true;
-    hide();
+      bLogout=true;
+      setVisible(false);
   }
   boolean ifLogout()
   {
