@@ -31,9 +31,9 @@ public class Login extends JDialog {
 	JRadioButton StudentRadio = new JRadioButton();
 	JRadioButton InstructorRadio = new JRadioButton();
 	ButtonGroup buttonGroup1 = new ButtonGroup();
-////// Attributes Added By me
-	private String UserBox = null;
-	private USER_TYPE UserType = USER_TYPE.Student; // default to Student
+        
+	private String userBox = null;
+	private USER_TYPE userType = USER_TYPE.Student; // default to Student
 
 	public Login() {
 		try {
@@ -88,27 +88,27 @@ public class Login extends JDialog {
 		m_bExit = false;
 		System.out.println("login clicked");
 		try {
-			if (StudentRadio.isSelected() == true)//// student
+			if (StudentRadio.isSelected() == true)
 			{
-				UserType = USER_TYPE.Student; /// 0 for student
+				userType = USER_TYPE.Student;
 				file = new BufferedReader(new FileReader("StuInfo.txt"));
 			} else// instructor
 			{
-				UserType = USER_TYPE.Instructor; // 1 for instructor
+				userType = USER_TYPE.Instructor; 
 				file = new BufferedReader(new FileReader("InsInfor.txt"));
 			}
-			UserBox = UserNameText.getText();
+			userBox = UserNameText.getText();
 			String PasswordBox = new String(PasswordText.getPassword());
 			String LoginName = null;
 			String aline = null, UserName = null, Password = null;
 			while ((aline = file.readLine()) != null) {
-				UserName = GetUserName(aline);
-				Password = GetPassword(aline);
-				if (UserName.compareTo(UserBox) == 0 && Password.compareTo(PasswordBox) == 0)
+				UserName = getUserName(aline);
+				Password = getPassword(aline);
+				if (UserName.compareTo(userBox) == 0 && Password.compareTo(PasswordBox) == 0)
 					LoginName = UserName;
 			}
 			if (LoginName != null) {
-				this.hide();
+				this.setVisible(false);
 			}
 		} catch (Exception ee) {
 			;
@@ -116,30 +116,34 @@ public class Login extends JDialog {
 
 	}
 
-	/*
-	 * get the user name from aline UserName:Password
-	 */
-	private String GetUserName(String aline) {
-		int Sep = aline.lastIndexOf(':');
-		return aline.substring(0, Sep);
+                    /**
+                     * Get the user name from aline UserName:Password
+                     * @param aline
+                     * @return 
+                     */
+	private String getUserName(String aline) {
+		int sep = aline.lastIndexOf(':');
+		return aline.substring(0, sep);
 	}
 
-	/*
-	 * get the password from aline UserName:Password
-	 */
-	private String GetPassword(String aline) {
-		int Sep = aline.lastIndexOf(':');
-		return aline.substring(Sep + 1, aline.length());
+                    /**
+                     * Get the password from aline UserName:Password
+                     * @param aline
+                     * @return 
+                     */
+	private String getPassword(String aline) {
+		int sep = aline.lastIndexOf(':');
+		return aline.substring(sep + 1, aline.length());
 	}
 
 	/* after login get the UserName of the login interface */
-	public String GetUserName() {
-		return UserBox;
+	public String getUserName() {
+		return userBox;
 	}
 
 	/* after login get the userType of the login interface */
-	public USER_TYPE GetUserType() {
-		return UserType;
+	public USER_TYPE getUserType() {
+		return userType;
 	}
 
 	public boolean isExit() {
