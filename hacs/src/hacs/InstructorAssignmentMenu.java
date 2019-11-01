@@ -17,12 +17,10 @@ import java.text.DateFormat;
 
 public class InstructorAssignmentMenu extends AssignmentMenu
 {
-////  class AssignmentMenu
   private boolean bSubmit=false;
   private Solution theSolution;
   private Assignment theAssignment;
   JComboBox CombSolutionList = new JComboBox();
-////////////////////////
 
 
   JTextField tbAssignmentName = new JTextField();
@@ -111,7 +109,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu
     tbDueDate.setText(theDateFormat.format(theAssignment.dueDate));
     tbSuggestedSolution.setText(theAssignment.suggestSolution.SolutionFileName );
     refreshSolutionList();
-    show();
+    setVisible(true);
   }
 
   void buttonClose_actionPerformed(ActionEvent e)
