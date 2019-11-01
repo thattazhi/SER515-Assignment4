@@ -90,13 +90,13 @@ abstract public class CourseMenu extends JDialog
 
   void AssignmentAddButton_actionPerformed(ActionEvent e)
   {
-    Hacs.theFacade.AddAssignment(theCourse);
+    Hacs.theFacade.addAssignment(theCourse);
     refresh();
   }
   void AssignmentViewButton_actionPerformed(ActionEvent e)
   {
     Assignment theAss=(Assignment)AssignmentCombox.getSelectedItem() ;
-    Hacs.theFacade.ViewAssignment(theAss);
+    Hacs.theFacade.viewAssignment(theAss);
   }
   void refresh()
   {

@@ -64,11 +64,11 @@ abstract public class Person {
 		return false;
 	}
 
-	public ClassCourseList GetCourseList() {
+	public ClassCourseList getCourseList() {
 		return courseList;
 	}
 
-	public void AddCourse(Course theCourse) {
+	public void addCourse(Course theCourse) {
 		courseList.add(theCourse);
 	}
 }
