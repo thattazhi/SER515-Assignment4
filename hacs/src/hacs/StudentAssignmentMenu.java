@@ -92,14 +92,16 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		this.getContentPane().add(bCancel, null);
 	}
 
-	/*
-	 * check if the student has already had a solution or not. if not , create a new
-	 * solution for the student. after showing the solution attatch the soluiton;
-	 */
-	public void ShowMenu(Assignment assignment, Person thePerson) {
+                    /**
+                     * This method checks if the student has already had a solution.
+                     * If not, creates a new solution for the student and then attach the solution
+                     * @param assignment
+                     * @param thePerson 
+                     */
+	public void showMenu(Assignment assignment, Person thePerson) {
 		theAssignment = assignment;
 		SolutionIterator theIter = theAssignment.getSolutionIterator();
-		theSolution = (Solution) theIter.next(thePerson.UserName);
+		theSolution = (Solution) theIter.next(thePerson.userName);
 		if (theSolution == null) {
 			tbSolution.setText("");
 			lGrade.setText("-1");
@@ -113,14 +115,14 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		lDueDate.setText(theAssignment.dueDate.toString());
 		lSuggestedSolution.setText(theAssignment.suggestSolution.SolutionFileName);
 
-		show();
+		setVisible(true);
 
 		if (boolSubmit == true) {
 			if (theSolution == null) {
 				theSolution = new Solution();
 				theAssignment.addSolution(theSolution);
 			}
-			theSolution.theAuthor = thePerson.UserName;
+			theSolution.theAuthor = thePerson.userName;
 			theSolution.SolutionFileName = tbSolution.getText();
 			theSolution.theSubmitData = new Date();
 		}
@@ -128,12 +130,12 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 
 	void bSubmit_actionPerformed(ActionEvent e) {
 		boolSubmit = true;
-		hide();
+		setVisible(false);
 	}
 
 	void bCancel_actionPerformed(ActionEvent e) {
 		boolSubmit = false;
-		hide();
+		setVisible(false);
 	}
 
 }

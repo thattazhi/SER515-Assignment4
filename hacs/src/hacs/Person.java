@@ -13,17 +13,17 @@ import java.util.*;
 
 abstract public class Person {
 	int type = 0; // type=0 : student, type=1 instructor
-	String UserName;
-	ClassCourseList CourseList;
+	String userName;
+	ClassCourseList courseList;
 	CourseMenu theCourseMenu;
-	Course CurrentCourse;
-	Assignment CurrentAssignment;
+	Course currentCourse;
+	Assignment currentAssignment;
 
 	public Person() {
-		CourseList = new ClassCourseList();
+		courseList = new ClassCourseList();
 	}
 
-	abstract public CourseMenu CreateCourseMenu(Course theCourse, int theLevel);
+	abstract public CourseMenu createCourseMenu(Course theCourse, int theLevel);
 
 	public void showAddButton() {
 		theCourseMenu.showAddButtons();
@@ -49,12 +49,13 @@ abstract public class Person {
 		return theCourseMenu.ifLogout();
 	}
 
-	// show the assignment list
-	public boolean ShowMenu() {
-		// create a iterator for the assignment list
-//    Iterator theIter=new ListIterator(CurrentCourse.AssList );
-		Iterator theIter = CurrentCourse.assignmentList.iterator();
-		theCourseMenu.theCourse = CurrentCourse;
+                    /**
+                     * This method shows the assignment list
+                     * @return 
+                     */
+	public boolean showMenu() {
+		Iterator theIter = currentCourse.assignmentList.iterator();
+		theCourseMenu.theCourse = currentCourse;
 		Assignment theAssignment;
 		while (theIter.hasNext()) {
 			theAssignment = (Assignment) theIter.next();
@@ -64,10 +65,10 @@ abstract public class Person {
 	}
 
 	public ClassCourseList GetCourseList() {
-		return CourseList;
+		return courseList;
 	}
 
 	public void AddCourse(Course theCourse) {
-		CourseList.add(theCourse);
+		courseList.add(theCourse);
 	}
 }

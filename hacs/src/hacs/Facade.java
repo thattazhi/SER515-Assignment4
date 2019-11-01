@@ -51,7 +51,7 @@ public class Facade {
 			theAssignmentMenu = new InstructorAssignmentMenu();
 		}
 		Assignment theAssignment = new Assignment();
-		theAssignmentMenu.ShowMenu(theAssignment, thePerson);
+		theAssignmentMenu.showMenu(theAssignment, thePerson);
 		theCourse.addAssignment(theAssignment);
 	}
 
@@ -71,7 +71,7 @@ public class Facade {
 			theAssignmentMenu = new InstructorAssignmentMenu();
 		}
 
-		theAssignmentMenu.ShowMenu(theAssignment, thePerson);
+		theAssignmentMenu.showMenu(theAssignment, thePerson);
 	}
 
 //functions for InstructorAssignmentMenu
@@ -115,7 +115,7 @@ public class Facade {
 		{
 			thePerson = new Instructor();
 		}
-		thePerson.UserName = userinfoitem.strUserName;
+		thePerson.userName = userinfoitem.strUserName;
 	}
 
 	/*
@@ -140,7 +140,7 @@ public class Facade {
 			{
 				strUserName = GetUserName(aline);
 				strCourseName = GetCourseName(aline);
-				if (strUserName.compareTo(thePerson.UserName) == 0) /// the UserName mateches
+				if (strUserName.compareTo(thePerson.userName) == 0) /// the UserName mateches
 				{
 					theSelecteCourse = FindCourseByCourseName(strCourseName);
 					if (theSelecteCourse != null) /// Find the Course in the CourseList--->attach
@@ -178,8 +178,8 @@ public class Facade {
 	 */
 	public boolean SelectCourse() {
 		CourseSelectDlg theDlg = new CourseSelectDlg();
-		theSelecteCourse = theDlg.showDlg(thePerson.CourseList);
-		thePerson.CurrentCourse = theSelecteCourse;
+		theSelecteCourse = theDlg.showDlg(thePerson.courseList);
+		thePerson.currentCourse = theSelecteCourse;
 		nCourseLevel = theDlg.nCourseLevel;
 		return theDlg.isLogout();
 	}
@@ -191,8 +191,8 @@ public class Facade {
 	 */
 
 	public boolean CourseOperation() {
-		thePerson.CreateCourseMenu(theSelecteCourse, nCourseLevel);
-		return thePerson.ShowMenu();//// 0: logout 1 select an other course
+		thePerson.createCourseMenu(theSelecteCourse, nCourseLevel);
+		return thePerson.showMenu();//// 0: logout 1 select an other course
 	}
 
 	/*

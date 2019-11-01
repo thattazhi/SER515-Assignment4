@@ -19,7 +19,7 @@ abstract public class AssignmentMenu extends JDialog
     public static final int LENGTH = 575;
     public static final int BREADTH = 330;
     
-    abstract void ShowMenu(Assignment assignment, Person person);
+    abstract void showMenu(Assignment assignment, Person person);
     
     public AssignmentMenu()
     {
