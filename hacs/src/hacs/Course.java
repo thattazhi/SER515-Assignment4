@@ -15,31 +15,42 @@ import java.util.*;
  */
 
 public class Course {
-  String CourseName;
-  public ArrayList<Assignment> assignmentList=new ArrayList<Assignment>();
-  int NumOfAss;
-  int CourseLevel;
+  String courseName;
+  public ArrayList<Assignment> assignmentList = new ArrayList<Assignment>();
+  int numOfAss;
+  int courseLevel;
 
 
   public Course(String strCourse, int theLevel) {
-    this.CourseName = strCourse;
+    this.courseName = strCourse;
 
-   //0 HighLeve presentation    1  LowLevel Experiment
-    this.CourseLevel = theLevel;
-   // this.AssList = NULL;
-    this.NumOfAss = 0;
+   //0 HighLevel presentation    1  LowLevel Experiment
+    this.courseLevel = theLevel;
+    this.numOfAss = 0;
   }
   
-  public void AddAssignment(Assignment newAss)
+  /**
+   *  Adds a new assignment to the assignment list of the course
+   * @param newAss 
+   */
+  public void addAssignment(Assignment newAss)
   {
     assignmentList.add(newAss);
   }
   
+  /**
+   *  Returns the name of the course.
+   * @return 
+   */
   public String toString()
   {
-    return CourseName;
+    return courseName;
   }
   
+  /**
+   *  Accept method for the Visitor design pattern.
+   * @param visitor 
+   */
   void accept(NodeVisitor visitor)
   {
     visitor.visitCourse(this);
