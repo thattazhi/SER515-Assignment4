@@ -14,9 +14,7 @@ import java.util.Iterator;
 public class SolutionIterator implements Iterator
 {
   SolutionList solutionlist;
-
-  ///  CurrentSolutionNumber: point to the location before the first element
-  int CurrentSolutionNumber=-1;
+  int currentSolutionNumber=-1;
 
   public SolutionIterator()
   {
@@ -24,44 +22,45 @@ public class SolutionIterator implements Iterator
   public SolutionIterator(SolutionList thesolutionlist)
   {
     solutionlist=thesolutionlist;
-    MoveToHead();
+    moveToHead();
   }
 
-  public void MoveToHead()
+  public void moveToHead()
   {
-  ///  CurrentSolutionNumber: point to the location before the first element
-    CurrentSolutionNumber=-1;
+    currentSolutionNumber=-1;
   }
 
   public boolean hasNext()
   {
-    /**@todo: Implement this java.util.Iterator method*/
-    if (CurrentSolutionNumber>=solutionlist.size()-1)
+    if (currentSolutionNumber>=solutionlist.size()-1)
       return false;
     else
       return true;
-//    throw new java.lang.UnsupportedOperationException("Method hasNext() not yet implemented.");
   }
+  
   public Object next()
   {
-    /**@todo: Implement this java.util.Iterator method*/
     if (hasNext()==true)
     {
-      CurrentSolutionNumber ++;
-      return solutionlist.get(CurrentSolutionNumber);
+      currentSolutionNumber ++;
+      return solutionlist.get(currentSolutionNumber);
     }
     else
     {
       return null;
     }
-    //    throw new java.lang.UnsupportedOperationException("Method next() not yet implemented.");
   }
 
   /// get the next Solution that fits the Username;
+  /**
+   * Get the next Solution that fits the Username
+   * @param UserName
+   * @return 
+   */
   public Object next(String UserName)
   {
     Solution theSolution;
-    theSolution=(Solution)next();
+    theSolution=(Solution) next();
     while(theSolution!=null)
     {
       if(UserName.compareTo(theSolution.theAuthor)==0)
@@ -75,9 +74,7 @@ public class SolutionIterator implements Iterator
 
   public void remove()
   {
-    /**@todo: Implement this java.util.Iterator method*/
-    solutionlist.remove(CurrentSolutionNumber);
-//    throw new java.lang.UnsupportedOperationException("Method remove() not yet implemented.");
+    solutionlist.remove(currentSolutionNumber);
   }
 
 
