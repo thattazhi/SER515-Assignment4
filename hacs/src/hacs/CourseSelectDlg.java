@@ -14,7 +14,7 @@ import java.awt.event.*;
 public class CourseSelectDlg extends JDialog {
 	// 0 HighLevel presentation 1 LowLevel Experiment
 	ClassCourseList theCourseList;
-	Course SelectedCourse;
+	Course selectedCourse;
 	int nCourseLevel = 0;
 	boolean m_bLogout = false;
 	JComboBox CourseNameCom = new JComboBox();
@@ -70,12 +70,13 @@ public class CourseSelectDlg extends JDialog {
 		buttonGroup1.add(LowLevelRadio);
 	}
 
-	/*
-	 * show the theCourseList in a combox Show the Course type selection button
-	 * return the pointer pointing to the Course object return the Course Type
-	 */
-
-	public Course ShowDlg(ClassCourseList courseList) {
+                    /**
+                     * This method shows the course list in a combo box.
+                     * Shows the course type selection button.
+                     * @param courseList
+                     * @return 
+                     */
+	public Course showDlg(ClassCourseList courseList) {
 
 		theCourseList = courseList;
 		CourseIterator theIterator = new CourseIterator(theCourseList);
@@ -84,17 +85,17 @@ public class CourseSelectDlg extends JDialog {
 		{
 			CourseNameCom.addItem(theCourse);
 		}
-		show();
-		return SelectedCourse;
+		setVisible(true);
+		return selectedCourse;
 	}
 
 	void OKButton_actionPerformed(ActionEvent e) {
-		SelectedCourse = (Course) CourseNameCom.getSelectedItem();
+		selectedCourse = (Course) CourseNameCom.getSelectedItem();
 		if (HighLevelRadio.isSelected())
 			nCourseLevel = 0; // highlevel course: 0
 		else
 			nCourseLevel = 1; // lowlevel course: 1
-		hide();
+                                          setVisible(false);
 	}
 
 	public boolean isLogout() {
@@ -103,6 +104,6 @@ public class CourseSelectDlg extends JDialog {
 
 	void buttonLogout_actionPerformed(ActionEvent e) {
 		m_bLogout = true;
-		hide();
+		setVisible(false);
 	}
 }
