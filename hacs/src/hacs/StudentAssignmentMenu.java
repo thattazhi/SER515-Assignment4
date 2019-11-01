@@ -14,8 +14,6 @@ import java.util.*;
  */
 
 public class StudentAssignmentMenu extends AssignmentMenu {
-
-////  class AssignmentMenu
 	private boolean boolSubmit = false;
 	private Solution theSolution;
 	private Assignment theAssignment;
@@ -137,5 +135,4 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		boolSubmit = false;
 		setVisible(false);
 	}
-
 }

@@ -28,7 +28,7 @@ public class Facade {
 		login.setModal(true);
 		login.show();
 		userinfoItem.strUserName = login.getUserName();
-		userinfoItem.UserType = login.getUserType();
+		userinfoItem.userType = login.getUserType();
 		return login.isExit();
 	}
 
@@ -81,7 +81,7 @@ public class Facade {
 
 	void GradeSolution(Solution theSolution) {
 		SolutionMenu solutionMenu = new SolutionMenu();
-		solutionMenu.ShowMenu(theSolution);
+		solutionMenu.showMenu(theSolution);
 	}
 
 	void ReportSolutions(Assignment theAssignment) {
@@ -108,7 +108,7 @@ public class Facade {
 	}
 
 	void CreateUser(UserInfoItem userinfoitem) {
-		if (userinfoitem.UserType == UserInfoItem.USER_TYPE.Student) /// student
+		if (userinfoitem.userType == UserInfoItem.USER_TYPE.Student) /// student
 		{
 			thePerson = new Student();
 		} else /// instructor
