@@ -14,7 +14,7 @@ import java.io.*;
  * @author mjfindler
  * @version 2.0
  * 
- * Update to Java 8
+ *          Update to Java 8
  */
 
 public class SolutionMenu extends JDialog {
@@ -25,5 +25,5 @@ public class SolutionMenu extends JDialog {
 	void showMenu(Solution theSolution) {
 		setVisible(true);
 	}
-	
+
 }

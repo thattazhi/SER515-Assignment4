@@ -17,10 +17,11 @@ public class ClassCourseList extends ArrayList<Course> {
 	public ClassCourseList() {
 	}
 
-                    /**
-                     *  This method initializes the list by reading from the file.
-                     * @param theFileName 
-                     */
+	/**
+	 * This method initializes the list by reading from the file.
+	 * 
+	 * @param theFileName
+	 */
 	void initializeFromFile(String theFileName) {
 		try {
 			BufferedReader file;
@@ -36,11 +37,12 @@ public class ClassCourseList extends ArrayList<Course> {
 		}
 	}
 
-                    /**
-                     *  This method finds the Course for a given Course Name
-                     * @param courseName
-                     * @return Course
-                     */
+	/**
+	 * This method finds the Course for a given Course Name
+	 * 
+	 * @param courseName
+	 * @return Course
+	 */
 	Course findCourseByCourseName(String courseName) {
 		int nCourseCount = size();
 		for (int i = 0; i < nCourseCount; i++) {

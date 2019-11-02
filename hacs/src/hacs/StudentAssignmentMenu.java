@@ -90,12 +90,13 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		this.getContentPane().add(bCancel, null);
 	}
 
-                    /**
-                     * This method checks if the student has already had a solution.
-                     * If not, creates a new solution for the student and then attach the solution
-                     * @param assignment
-                     * @param thePerson 
-                     */
+	/**
+	 * This method checks if the student has already had a solution. If not, creates
+	 * a new solution for the student and then attach the solution
+	 * 
+	 * @param assignment
+	 * @param thePerson
+	 */
 	public void showMenu(Assignment assignment, Person thePerson) {
 		theAssignment = assignment;
 		SolutionIterator theIter = theAssignment.getSolutionIterator();

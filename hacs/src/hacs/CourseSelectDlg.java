@@ -70,12 +70,13 @@ public class CourseSelectDlg extends JDialog {
 		buttonGroup1.add(LowLevelRadio);
 	}
 
-                    /**
-                     * This method shows the course list in a combo box.
-                     * Shows the course type selection button.
-                     * @param courseList
-                     * @return 
-                     */
+	/**
+	 * This method shows the course list in a combo box. Shows the course type
+	 * selection button.
+	 * 
+	 * @param courseList
+	 * @return
+	 */
 	public Course showDlg(ClassCourseList courseList) {
 
 		theCourseList = courseList;
@@ -95,7 +96,7 @@ public class CourseSelectDlg extends JDialog {
 			nCourseLevel = 0; // highlevel course: 0
 		else
 			nCourseLevel = 1; // lowlevel course: 1
-                                          setVisible(false);
+		setVisible(false);
 	}
 
 	public boolean isLogout() {

@@ -31,7 +31,7 @@ public class Login extends JDialog {
 	JRadioButton StudentRadio = new JRadioButton();
 	JRadioButton InstructorRadio = new JRadioButton();
 	ButtonGroup buttonGroup1 = new ButtonGroup();
-        
+
 	private String userBox = null;
 	private USER_TYPE userType = USER_TYPE.Student; // default to Student
 
@@ -88,13 +88,12 @@ public class Login extends JDialog {
 		m_bExit = false;
 		System.out.println("login clicked");
 		try {
-			if (StudentRadio.isSelected() == true)
-			{
+			if (StudentRadio.isSelected() == true) {
 				userType = USER_TYPE.Student;
 				file = new BufferedReader(new FileReader("StuInfo.txt"));
 			} else// instructor
 			{
-				userType = USER_TYPE.Instructor; 
+				userType = USER_TYPE.Instructor;
 				file = new BufferedReader(new FileReader("InsInfor.txt"));
 			}
 			userBox = UserNameText.getText();
@@ -116,21 +115,23 @@ public class Login extends JDialog {
 
 	}
 
-                    /**
-                     * Get the user name from aline UserName:Password
-                     * @param aline
-                     * @return 
-                     */
+	/**
+	 * Get the user name from aline UserName:Password
+	 * 
+	 * @param aline
+	 * @return
+	 */
 	private String getUserName(String aline) {
 		int sep = aline.lastIndexOf(':');
 		return aline.substring(0, sep);
 	}
 
-                    /**
-                     * Get the password from aline UserName:Password
-                     * @param aline
-                     * @return 
-                     */
+	/**
+	 * Get the password from aline UserName:Password
+	 * 
+	 * @param aline
+	 * @return
+	 */
 	private String getPassword(String aline) {
 		int sep = aline.lastIndexOf(':');
 		return aline.substring(sep + 1, aline.length());

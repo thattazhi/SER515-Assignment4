@@ -12,7 +12,7 @@ import java.util.*;
  * @author mjfindler
  * @version 2.0
  * 
- * update to Java 8
+ *          update to Java 8
  */
 
 public class Solution {

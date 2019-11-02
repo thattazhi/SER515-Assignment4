@@ -18,7 +18,7 @@ public class LowLevelCourseMenu extends CourseMenu {
 	}
 
 	void showMenu(Course theCourse) {
-                                          setVisible(true);
+		setVisible(true);
 	}
 
 	void showAddButtons() {

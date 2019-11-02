@@ -3,74 +3,59 @@ package hacs;
 import java.util.Iterator;
 
 /**
- * Title:        HACS
- * Description:
- * Copyright:    Copyright (c) 2002
- * Company:      msu
+ * Title: HACS Description: Copyright: Copyright (c) 2002 Company: msu
+ * 
  * @author Zhang ji Zhu Wei
  * @version 1.0
  */
 
-public class CourseIterator implements Iterator
-{
+public class CourseIterator implements Iterator {
   ClassCourseList theCourseList;
   int currentCourseNumber = -1;
 
-
-  public CourseIterator()
-  {
+  public CourseIterator() {
   }
 
-  public CourseIterator(ClassCourseList courseList)
-  {
+  public CourseIterator(ClassCourseList courseList) {
     theCourseList = courseList;
   }
 
-  public boolean hasNext()
-  {
-    if (currentCourseNumber >= theCourseList.size()-1)
+  public boolean hasNext() {
+    if (currentCourseNumber >= theCourseList.size() - 1)
       return false;
     else
       return true;
   }
 
-  public Object next()
-  {
-    if (hasNext() == true)
-    {
-      currentCourseNumber ++;
+  public Object next() {
+    if (hasNext() == true) {
+      currentCourseNumber++;
       return theCourseList.get(currentCourseNumber);
-    }
-    else
-    {
+    } else {
       return null;
     }
   }
-  public void remove()
-  {
+
+  public void remove() {
     theCourseList.remove(currentCourseNumber);
   }
 
   /**
-   *  This method finds the next Course that fits the 
-   *  given CourseName
+   * This method finds the next Course that fits the given CourseName
+   * 
    * @param courseName
-   * @return 
+   * @return
    */
-  public Object next(String courseName)
-  {
+  public Object next(String courseName) {
     Course theCourse;
     theCourse = (Course) next();
-    while(theCourse!=null)
-    {
-      if(courseName.compareTo(theCourse.toString())==0)
-      {
+    while (theCourse != null) {
+      if (courseName.compareTo(theCourse.toString()) == 0) {
         return theCourse;
       }
-      theCourse=(Course)next();
+      theCourse = (Course) next();
     }
     return null;
   }
-
 
 }

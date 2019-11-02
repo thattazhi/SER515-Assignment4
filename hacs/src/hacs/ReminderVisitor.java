@@ -9,9 +9,9 @@ import java.util.*;
  * @author Zhang ji Zhu Wei
  * @version 1.0
  * @author mjfindler
- * @version 2.0 
+ * @version 2.0
  * 
- * update to Java 8
+ *          update to Java 8
  */
 
 /*
@@ -55,8 +55,7 @@ public class ReminderVisitor extends NodeVisitor {
 		int ntoday = calendar.get(Calendar.DAY_OF_YEAR);
 		calendar.setTime(assignment.dueDate);
 		int nDueDate = calendar.get(Calendar.DAY_OF_YEAR);
-		if (nDueDate <= (ntoday + 1) && nDueDate >= ntoday)
-		{
+		if (nDueDate <= (ntoday + 1) && nDueDate >= ntoday) {
 			m_Reminder.listUpcoming.add("today is " + today.toString() + " " + assignment.assName + " Due Date is "
 					+ assignment.getDueDateString());
 		}

@@ -49,10 +49,11 @@ abstract public class Person {
 		return theCourseMenu.ifLogout();
 	}
 
-                    /**
-                     * This method shows the assignment list
-                     * @return 
-                     */
+	/**
+	 * This method shows the assignment list
+	 * 
+	 * @return
+	 */
 	public boolean showMenu() {
 		Iterator theIter = currentCourse.assignmentList.iterator();
 		theCourseMenu.theCourse = currentCourse;
