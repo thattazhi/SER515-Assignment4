@@ -20,7 +20,6 @@ public class AssignmentTest {
      */
     @Test
     public void testIsOverDue1() {
-        System.out.println("isOverDue");
         Assignment instance = new Assignment();
         instance.setDueDate(new Date());
         boolean expResult = false;
@@ -30,7 +29,6 @@ public class AssignmentTest {
 
     @Test
     public void testIsOverDue2() {
-        System.out.println("isOverDue");
         Assignment instance = new Assignment();
         Date dueDate = new GregorianCalendar(2019, Calendar.OCTOBER, 31).getTime();
         instance.setDueDate(dueDate);
@@ -41,7 +39,6 @@ public class AssignmentTest {
  
     @Test
     public void testIsOverDue3() {
-        System.out.println("isOverDue");
         Assignment instance = new Assignment();
         instance.setDueDate(new GregorianCalendar(2019, Calendar.NOVEMBER, 30).getTime());
         boolean expResult = false;

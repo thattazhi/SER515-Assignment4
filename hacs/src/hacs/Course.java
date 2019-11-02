@@ -18,13 +18,14 @@ public class Course {
   public ArrayList<Assignment> assignmentList = new ArrayList<Assignment>();
   int numOfAss;
   int courseLevel;
+  public static final int INITIAL_NUMBER_OF_ASSIGNMENT = 0;
 
   public Course(String strCourse, int theLevel) {
     this.courseName = strCourse;
 
     // 0 HighLevel presentation 1 LowLevel Experiment
     this.courseLevel = theLevel;
-    this.numOfAss = 0;
+    this.numOfAss = INITIAL_NUMBER_OF_ASSIGNMENT;
   }
 
   /**
